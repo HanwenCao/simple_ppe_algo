@@ -23,13 +23,14 @@ set(PUBLIC_HEADER_FILES include/handeyeTarget.hpp
 		    	 include/handeyeTargetConfig.hpp)
 
 # Set realsense dependency
-set(realsense2_FOUND true)
-set(realsense2_LIBRARY_DIRS "/usr/lib/x86_64-linux-gnu")
-set(realsense2_LIBRARIES "${realsense2_LIBRARY_DIRS}/librealsense2.so")
+##set(realsense2_FOUND true)
+##set(realsense2_LIBRARY_DIRS "/usr/lib/x86_64-linux-gnu")
+##set(realsense2_LIBRARIES "${realsense2_LIBRARY_DIRS}/librealsense2.so")
 
 # Find dependencies ####
-find_package(ament_cmake REQUIRED)
+## find_package(ament_cmake REQUIRED)
 find_package(OpenCV REQUIRED)
+find_package(realsense2 REQUIRED)
 # find_package(apriltag REQUIRED)
 
 
@@ -52,12 +53,13 @@ target_link_libraries(${PROJECT_NAME}
         ${OpenCV_LIBS} 
         # ${apriltag_LIBS}
         ${realsense2_LIBRARIES}
+        ${realsense2_LIBRARY}
 )
 
 
-ament_export_dependencies(realsense2)
-ament_export_include_directories(include)
-ament_export_libraries(${PROJECT_NAME})
+##ament_export_dependencies(realsense2)
+##ament_export_include_directories(include)
+##ament_export_libraries(${PROJECT_NAME})
 
 
 # # install
@@ -77,14 +79,14 @@ target_link_libraries(testHandeyeTarget ${PROJECT_NAME})
 
 
 if(BUILD_TESTING)
-  find_package(ament_lint_auto REQUIRED)
+  ##find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
   # uncomment the line when a copyright and license is not present in all source files
   #set(ament_cmake_copyright_FOUND TRUE)
   # the following line skips cpplint (only works in a git repo)
   # uncomment the line when this package is not in a git repo
   #set(ament_cmake_cpplint_FOUND TRUE)
-  ament_lint_auto_find_test_dependencies()
+  ##ament_lint_auto_find_test_dependencies()
 endif()
 
-ament_package()
+##ament_package()

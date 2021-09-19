@@ -13,8 +13,8 @@ int main(int argc, char *argv[]) {
 
   // config
   handeyeTargetConfig charuco_cfg;
-  charuco_cfg.marker_measured_size = 0.02f;
-  charuco_cfg.marker_measured_separation = 0.016f;
+  charuco_cfg.marker_measured_size = 0.09f; //黑色方块尺寸，single模式下没用
+  charuco_cfg.marker_measured_separation = 0.08f; //每个二维码尺寸
   charuco_cfg.dictionary_id_str = "DICT_4X4_250";
   target_aruco_.configTarget(charuco_cfg);
 
@@ -39,6 +39,7 @@ int main(int argc, char *argv[]) {
 
   // 3. test with data
   // read single img for simulation test 
+  
   cv::Mat color_mat = cv::imread("img_0.jpg");
   cv::Mat gray_mat;
   cv::Mat Hcam_cvmat;
@@ -51,7 +52,7 @@ int main(int argc, char *argv[]) {
     cv::waitKey(0);
     cv::destroyWindow("detected");
   }
-
+  
   // get video stream for real data test
 	rs2::frameset frames;
   cv::Mat img;
