@@ -15,6 +15,8 @@ test file: build/auto_market_ppe/testHandeyeTarget
 
 ## 2. Usage
 Clone the generated shared library and header files to your project, and you could refer to the test file in folder tset/, for the reference of usage in detail. 
+https://chev.me/arucogen/
+
 
 ## 3. Test file workflow
 1. Configurations  
